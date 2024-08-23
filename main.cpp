@@ -59,14 +59,12 @@ int main() {
 
             if (socket == serverSocket) {
                 //Add the connection to the list of connect sockets by using accept
-                //TODO Add more info to the socket so look up what more i can do with the accept function
                 SOCKET client = accept(serverSocket, nullptr, nullptr );
 
                 FD_SET(client, &master);
                 std::string welcomeMessage = "welcome to the group chat! \r\n";
                 send(client, welcomeMessage.c_str(), welcomeMessage.size() + 1, 0);
 
-                //TODO: broadcast we have a new connection
                 for (int j = 0; j < master.fd_count; ++j) {
                     SOCKET outSock = master.fd_array[j];
                     if (outSock != client && outSock != serverSocket) {
