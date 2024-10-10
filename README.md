@@ -15,7 +15,7 @@
 
 1. **Clone the Repository:**
     ```bash
-    git clone https://github.com/yourusername/chat-server.git
+    git clone https://github.com/jakeTheGreat11/chat-server.git
     cd chat-server
     ```
 
